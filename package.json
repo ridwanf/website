@@ -1,0 +1,23 @@
+{
+  "name": "ls",
+  "version": "1.0.0",
+  "description": "- [Demo](https://themewagon.github.io/folio-html/)",
+  "homepage": "https://github.com/ridwanf/website#readme",
+  "bugs": {
+    "url": "https://github.com/ridwanf/website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ridwanf/website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

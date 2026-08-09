@@ -1,48 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" x-data="app()" :class="{'dark':dark}" class="scroll-smooth">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ridwan Fansuri —Frontend Developer. and Guitarist.">
-  <meta name="keywords" content="Frontend developer, UI designer, portfolio, Tailwind CSS, Alpine.js">
-  <meta name="author" content="Ridwan Fansuri">
-  <meta property="og:title" content="Ridwan Fansuri — Frontend Developer">
-  <meta property="og:description" content="I design and build digital products that people love to use.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ridwanfansuri.com">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ridwan Fansuri —Frontend Developer. and Guitarist." />
+  <meta name="keywords" content="Frontend developer, UI designer, portfolio, Tailwind CSS, Alpine.js" />
+  <meta name="author" content="Ridwan Fansuri" />
+  <meta property="og:title" content="Ridwan Fansuri — Frontend Developer" />
+  <meta property="og:description" content="I design and build digital products that people love to use." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ridwanfansuri.com" />
   <title>Ridwan Fansuri — Frontend Dev</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
 
   <script>
     tailwind.config = {
-      darkMode: 'class',
+      darkMode: "class",
       theme: {
         extend: {
-          fontFamily: { display: ['PT Sans', 'sans-serif'], body: ['DM Sans', 'sans-serif'] },
-          colors: { accent: '#FF6B2B', 'accent-light': '#FF8F5C' }
-        }
-      }
-    }
+          fontFamily: {
+            display: ["PT Sans", "sans-serif"],
+            body: ["DM Sans", "sans-serif"],
+          },
+          colors: { accent: "#FF6B2B", "accent-light": "#FF8F5C" },
+        },
+      },
+    };
   </script>
 
   <style>
     *,
     *::before,
     *::after {
-      box-sizing: border-box
+      box-sizing: border-box;
     }
 
     html,
     body {
-      font-family: 'DM Sans', sans-serif
+      font-family: "DM Sans", sans-serif;
     }
 
     h1,
@@ -51,177 +54,173 @@
     h4,
     h5,
     h6 {
-      font-family: 'PT Sans', sans-serif
+      font-family: "PT Sans", sans-serif;
     }
 
     body {
-      transition: background-color .3s, color .3s
+      transition:
+        background-color 0.3s,
+        color 0.3s;
     }
 
     /* noise overlay */
     body::before {
-      content: '';
+      content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
       z-index: 0;
-      opacity: .35;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E")
+      opacity: 0.35;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");
     }
 
     /* scrollbar */
     ::-webkit-scrollbar {
-      width: 5px
+      width: 5px;
     }
 
     ::-webkit-scrollbar-track {
-      background: transparent
+      background: transparent;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #FF6B2B;
-      border-radius: 99px
+      background: #ff6b2b;
+      border-radius: 99px;
     }
 
     /* reveal on scroll */
     .reveal {
       opacity: 0;
       transform: translateY(26px);
-      transition: opacity .6s cubic-bezier(.4, 0, .2, 1), transform .6s cubic-bezier(.4, 0, .2, 1)
+      transition:
+        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .reveal.in {
       opacity: 1;
-      transform: none
+      transform: none;
     }
 
     .d1 {
-      transition-delay: .08s
+      transition-delay: 0.08s;
     }
 
     .d2 {
-      transition-delay: .16s
+      transition-delay: 0.16s;
     }
 
     .d3 {
-      transition-delay: .24s
+      transition-delay: 0.24s;
     }
 
     .d4 {
-      transition-delay: .32s
+      transition-delay: 0.32s;
     }
 
     /* nav underline animation */
     .nl {
-      position: relative
+      position: relative;
     }
 
     .nl::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -2px;
       left: 0;
       width: 0;
       height: 1.5px;
       background: currentColor;
-      transition: width .22s cubic-bezier(.4, 0, .2, 1)
+      transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nl:hover::after,
     .nl.on::after {
-      width: 100%
+      width: 100%;
     }
 
     .nl.on {
-      font-weight: 500
+      font-weight: 500;
     }
 
     /* shimmer button */
     .shimmer {
       position: relative;
-      overflow: hidden
+      overflow: hidden;
     }
 
     .shimmer::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 60%;
       height: 100%;
-      background: rgba(255, 255, 255, .18);
+      background: rgba(255, 255, 255, 0.18);
       transform: skewX(-20deg);
-      transition: left .4s cubic-bezier(.4, 0, .2, 1)
+      transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .shimmer:hover::after {
-      left: 160%
+      left: 160%;
     }
 
     /* photo frames */
     .pf {
       overflow: hidden;
-      background: #d4d4d8
+      background: #d4d4d8;
     }
 
     .pf img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
-      display: block
+      display: block;
     }
 
     /* card hover */
     .card-h {
-      transition: transform .28s cubic-bezier(.4, 0, .2, 1), border-color .18s
+      transition:
+        transform 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.18s;
     }
 
     .card-h:hover {
-      transform: translateY(-4px)
+      transform: translateY(-4px);
     }
 
     /* skill tag */
     .stag {
-      transition: border-color .18s
+      transition: border-color 0.18s;
     }
 
     [x-cloak] {
-      display: none !important
+      display: none !important;
     }
   </style>
 </head>
 
 <body class="bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased">
-
   <!-- ═══ NAV ═══ -->
   <header class="fixed inset-x-0 top-0 z-50 transition-all duration-300"
     :class="sc?'bg-white/90 dark:bg-zinc-950/90 backdrop-blur-md shadow-sm shadow-black/5':''">
     <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between" aria-label="Main navigation">
-
       <a href="#hero" class="font-display font-bold text-xl tracking-tight relative z-10">
         <span class="text-zinc-900 dark:text-white">ridwan</span><span class="text-accent">fansuri</span>
       </a>
 
-      <!-- <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
+      <ul class="hidden md:flex items-center gap-8 text-sm" role="list">
         <li><a href="#services"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
             :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Services</a></li>
-        <li><a href="#work"
+        <li><a href="#link"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">Work</a></li>
-        <li><a href="#about"
+            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">My Link</a></li>
+        <li><a href="#portfolio"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">About</a></li>
-        <li><a href="#reviews"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='reviews'?'on !text-zinc-900 dark:!text-white':''">Reviews</a></li>
-        <li><a href="#blog"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='blog'?'on !text-zinc-900 dark:!text-white':''">Blog</a></li>
-        <li><a href="#contact"
-            class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='contact'?'on !text-zinc-900 dark:!text-white':''">Contact</a></li>
-      </ul> -->
+            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Portfolio</a></li>
+
+      </ul>
 
       <div class="flex items-center gap-3">
         <!-- dark toggle -->
@@ -240,7 +239,8 @@
         <!-- hire me -->
         <a href="https://www.linkedin.com/in/ridwanfansuri/"
           class="hidden md:inline-flex items-center gap-2 shimmer bg-accent text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-accent-light transition-colors">
-          My Linkedin <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+          My Linkedin
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
         </a>
@@ -264,29 +264,18 @@
       x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
       x-transition:leave-end="opacity-0 -translate-y-2"
       class="md:hidden bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
-      <!-- <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
+      <ul class="flex flex-col px-6 py-5 gap-4 text-sm font-medium" role="list">
         <li><a href="#services" @click="mm=false"
             class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Services</a></li>
-        <li><a href="#work" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Work</a></li>
-        <li><a href="#about" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">About</a></li>
-        <li><a href="#reviews" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Reviews</a></li>
-        <li><a href="#blog" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Blog</a></li>
-        <li><a href="#contact" @click="mm=false"
-            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Contact</a></li>
-        <li class="pt-2 border-t border-zinc-100 dark:border-zinc-900">
-          <a href="#contact" @click="mm=false"
-            class="inline-flex shimmer bg-accent text-white font-medium text-sm px-5 py-2.5 rounded-full">Hire me →</a>
-        </li>
-      </ul> -->
+        <li><a href="#link" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">My Link</a></li>
+        <li><a href="#portfolio" @click="mm=false"
+            class="block text-zinc-700 dark:text-zinc-300 hover:text-accent transition-colors">Portfolio</a></li>
+      </ul>
     </div>
   </header>
 
   <main>
-
     <!-- ═══ HERO ═══ -->
     <section id="hero" class="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div class="absolute top-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl pointer-events-none"
@@ -297,9 +286,7 @@
 
       <div class="relative z-10 max-w-6xl mx-auto px-6 py-24 w-full">
         <div class="grid md:grid-cols-2 gap-12 items-center">
-
           <div>
-
             <h1
               class="reveal d1 font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-zinc-900 dark:text-white mb-6">
               Hi, I'm <span class="text-accent">Ridwan Fansuri</span>
@@ -307,154 +294,185 @@
             <p
               class="reveal d2 text-lg md:text-xl text-zinc-500 dark:text-zinc-400 font-light leading-relaxed max-w-md mb-10">
               <strong class="font-medium text-zinc-700 dark:text-zinc-300">Fullstack, Frontend Engineer &amp; Guitarist
-              </strong>. I
-              build digital and make music
+              </strong>. I build digital and make music
             </p>
-            <!-- <div class="reveal d3 flex flex-wrap gap-4">
-              <a href="#work"
+            <div class="reveal d3 flex flex-wrap gap-4">
+              <a href="#portfolio"
                 class="shimmer inline-flex items-center gap-2 bg-zinc-900 dark:bg-white text-white dark:text-zinc-900 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors text-sm">
                 View my work
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </a>
-              <a href="#contact"
-                class="inline-flex items-center gap-2 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-medium px-7 py-3.5 rounded-full hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors text-sm">Get
-                in touch</a>
             </div>
-            <div class="reveal d4 flex gap-8 mt-14 pt-8 border-t border-zinc-100 dark:border-zinc-900">
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">34+</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Projects done</p>
-              </div>
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">21+</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Happy clients</p>
-              </div>
-              <div>
-                <p class="font-display font-bold text-3xl text-zinc-900 dark:text-white">5y</p>
-                <p class="text-xs text-zinc-500 dark:text-zinc-400 mt-1">Experience</p>
-              </div>
-            </div> -->
           </div>
 
           <div class="reveal d2 flex justify-center md:justify-end">
             <div class="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div class="pf w-full h-full rounded-3xl">
-                <img src="imgs/profile.jpeg" alt="Ridwan Fansuri — Fullstack Engineer" loading="eager">
+                <img src="imgs/profile.jpeg" alt="Ridwan Fansuri — Fullstack Engineer" loading="eager" />
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- ═══ SERVICES ═══ -->
-    <!-- <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="mb-14">
-      <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">What I do</p>
-      <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Services</h2>
-    </div>
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2h-2"/></svg>
+    <section id="services" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-14">
+          <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">
+            What I do
+          </p>
+          <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">
+            Services
+          </h2>
         </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">UI/UX Design</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">From wireframes to polished Figma prototypes. Intuitive, visually compelling interfaces that convert visitors into users and put usability first.</p>
-      </article>
+        <div class="grid md:grid-cols-2 gap-8">
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">
+              Software Engineering
+            </h3>
+            <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+              From wireframes to polished Figma prototypes. From PRD to
+              production-ready code. I write code that is clean, maintainable
+              and scalable. I can help you build your next web app or website.
+            </p>
+          </article>
 
-      <article class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          <article
+            class="reveal d2 card-h group bg-zinc-900 dark:bg-zinc-800 rounded-2xl p-8 border border-zinc-800 hover:border-accent">
+            <div
+              class="w-12 h-12 flex items-center justify-center bg-zinc-800 dark:bg-zinc-700 rounded-xl mb-6 group-hover:bg-accent/20 transition-colors">
+              <?xml version="1.0" encoding="utf-8"?>
+
+              <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+              <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path class="st1" d="M12.8,21.8L12.8,21.8c-1.7-1.4-2.3-3.8-1.5-5.9l4.1-10.7C16.3,3,19,2.3,20.8,3.8l0,0c1.4,1.2,1.6,3.3,0.5,4.7
+	l-1.1,1.5l1.4,6.2c0.4,1.9-0.2,3.9-1.7,5.1l-0.4,0.4C17.5,23.4,14.7,23.4,12.8,21.8z" />
+                <line class="st1" x1="14" y1="29" x2="14" y2="22.5" />
+                <line class="st1" x1="19" y1="22.1" x2="19" y2="29" />
+                <line class="st1" x1="9.6" y1="14.9" x2="11.4" y2="15.7" />
+                <line class="st1" x1="10.6" y1="11.9" x2="12.5" y2="12.8" />
+                <line class="st1" x1="11.6" y1="8.9" x2="13.6" y2="9.8" />
+                <line class="st1" x1="12.6" y1="5.9" x2="14.8" y2="6.9" />
+              </svg>
+            </div>
+            <h3 class="font-display font-bold text-xl text-white mb-3">
+              Guitarist
+            </h3>
+            <p class="text-sm text-zinc-400 leading-relaxed">
+              I play guitar and write music. I have been playing guitar for
+              over 10 years and have performed in various bands and events. I
+              can help you with your music projects or collaborate with you on
+              your next song.
+            </p>
+          </article>
         </div>
-        <h3 class="font-display font-bold text-xl text-white mb-3">Frontend Dev</h3>
-        <p class="text-sm text-zinc-400 leading-relaxed">Production-grade code with Tailwind CSS and Alpine.js. Pixel-perfect, fully responsive, SEO-friendly and blazing fast — no bloat, no heavy frameworks.</p>
-      </article>
-
-      <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl p-8 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="w-12 h-12 flex items-center justify-center bg-orange-50 dark:bg-zinc-800 rounded-xl mb-6 group-hover:bg-accent/10 transition-colors">
-          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/></svg>
-        </div>
-        <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-3">Landing Pages</h3>
-        <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">High-converting pages for SaaS, apps and personal brands. Designed to communicate value instantly and drive action from the first scroll.</p>
-      </article>
-
-    </div>
-  </div>
-</section> -->
+      </div>
+    </section>
 
     <!-- ═══ WORK ═══ -->
-    <!-- <section id="work" class="py-24">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-      <div>
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Portfolio</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">Selected work</h2>
+    <section id="link" class="py-24">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+          <div>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Link</p>
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">My Link</h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+
+          <article
+            class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-48">
+              <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=900&q=80" alt="Github"
+                loading="lazy">
+            </div>
+            <div class="p-7">
+              <a href="https://github.com/ridwanf">
+                <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Github</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                My Github profile where I share my open source projects and contributions. You can find my code samples,
+                libraries, and tools that I have built and maintained.
+              </p>
+              <a href="https://github.com/ridwanf"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Go to
+                Github</a> →</a>
+
+            </div>
+          </article>
+
+          <article
+            class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-48">
+              <img src="https://images.unsplash.com/photo-1532354058425-ba7ccc7e4a24?w=800&q=80" alt="Spotify"
+                loading="lazy">
+            </div>
+            <div class="p-6">
+              <a href="https://artists.spotify.com/c/artist/3EjlySzq8J9EVbxHk587as/home">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Spotify Artist Page</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                My personal Spotify artist page where I showcase my music and connect with fans.
+              </p>
+              <a href="https://artists.spotify.com/c/artist/3EjlySzq8J9EVbxHk587as/home"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View
+                Spotify Page →</a>
+            </div>
+          </article>
+
+          <article
+            class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-48">
+              <img src="https://images.unsplash.com/photo-1540655037529-dec987208707?w=800&q=80" alt="YouTube Channel"
+                loading="lazy">
+            </div>
+            <div class="p-6">
+              <a href="https://www.youtube.com/@ridwan_fansuri">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">YouTube Channel</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                My YouTube channel where I share my music and content.
+              </p>
+              <a href="https://www.youtube.com/@ridwan_fansuri"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View
+                YouTube Channel →</a>
+            </div>
+          </article>
+
+          <article
+            class="card-h reveal d4 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-48">
+              <img src="imgs/youtube-kob.png" class="h-full w-full" alt="KOB YouTube Channel" loading="lazy">
+            </div>
+            <div class="p-6">
+              <a href="https://www.youtube.com/@ridwan_fansuri">
+                <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">YouTube Channel</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                My Band YouTube channel where I share my music and content.
+              </p>
+              <a href="https://www.youtube.com/@ridwan_fansuri"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View
+                YouTube Channel →</a>
+            </div>
+          </article>
+
+        </div>
       </div>
-      <a href="projects.html" class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">All projects →</a>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-6">
-
-      <article class="card-h reveal d1 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent md:row-span-2">
-        <div class="pf w-full h-64 md:h-80">
-          <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=900&q=80" alt="Novu SaaS Dashboard" loading="lazy">
-        </div>
-        <div class="p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">SaaS</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Figma</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Tailwind</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-2xl text-zinc-900 dark:text-white mb-2">Novu — SaaS Dashboard</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quis, odit nam aperiam fugiat optio libero. Nisi, minus officiis eius odio tempora velit fugit at, id labore ut libero reiciendis!<br><br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa ducimus repudiandae eligendi veritatis dicta quo fuga fugiat autem tempore perspiciatis illo doloremque est labore, molestiae eius, voluptatum ex aut quibusdam.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur neque ipsum eveniet eligendi dolores, dicta beatae? Velit iusto nemo praesentium architecto, ipsa excepturi facere quisquam, reprehenderit a cumque sapiente? Laudantium!</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-        </div>
-      </article>
-
-      <article class="card-h reveal d2 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-48">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Finlo Fintech App" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Fintech</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Landing page</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Finlo — Fintech App</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Marketing site and onboarding flow for a personal finance app targeting young professionals. Tailwind CSS + Alpine.js.</p>
-          <a href="case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
-        </div>
-      </article>
-
-      <article class="card-h reveal d3 group rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-48">
-          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" alt="Orea Creative Agency" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex flex-wrap gap-2 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-3 py-1 rounded-full">Agency</span>
-            <span class="text-xs bg-zinc-200 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-3 py-1 rounded-full">Animation</span>
-          </div>
-          <a href="case-study.html">
-            <h3 class="font-display font-bold text-xl text-zinc-900 dark:text-white mb-1.5">Orea — Creative Agency</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Bold editorial site for a Paris-based branding studio. Scroll-driven animations and custom cursor to match their premium positioning.</p>
-          <a href=case-study.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View case study →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section> -->
+    </section>
 
     <!-- ═══ ABOUT ═══ -->
     <!-- <section id="about" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
@@ -563,73 +581,92 @@
   </div>
 </section> -->
 
-    <!-- ═══ BLOG ═══ -->
-    <!-- <section id="blog" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
-      <div>
-        <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Thoughts</p>
-        <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">From the blog</h2>
+    <!-- ═══ PORTFOLIO ═══ -->
+    <section id="portfolio" class="py-24 bg-zinc-50 dark:bg-zinc-900/40">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
+          <div>
+            <p class="reveal text-xs font-medium text-accent tracking-widest uppercase mb-3">Porfolio</p>
+            <h2 class="reveal d1 font-display font-bold text-4xl md:text-5xl text-zinc-900 dark:text-white">My Portfolio</h2>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-44">
+              <img src="imgs/seo-check.png"
+                alt="SEO Checker" loading="lazy">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  SEO</span>
+                   <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  NestJS</span>
+                  <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  ReactJS</span>
+                   <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  Monorepo</span>
+
+              </div>
+              <a href="https://seocheck.ridwanfansuri.com/">
+                <h3
+                  class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  SEO Checker</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                A monorepo project for checking and analyzing SEO performance of websites. Developed with NestJS and ReactJS. </p>
+              <a href="https://seocheck.ridwanfansuri.com/"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View Project
+                →</a>
+            </div>
+          </article>
+
+          <article
+            class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
+            <div class="pf w-full h-44">
+              <img src="imgs/property-pulse.png"
+                alt="Property Pulse" loading="lazy">
+            </div>
+            <div class="p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <span
+                  class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">
+                  NextJs</span>
+                  <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  ReactJS</span>
+                   <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  MongoDB</span>
+                  <span
+                  class="text-xs bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400 px-2.5 py-1 rounded-full">
+                  Tailwind</span>
+
+              </div>
+              <a href="https://property-pulse.ridwanfansuri.com/">
+                <h3
+                  class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">
+                  Property Pulse</h3>
+              </a>
+              <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">
+                A NextJs project for property listing and management. Developed with ReactJS, MongoDB, and Tailwind CSS.  
+               </p>
+              <a href="https://property-pulse.ridwanfansuri.com/"
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">View Project
+                →</a>
+            </div>
+          </article>
+
+        </div>
       </div>
-      <a href="blog.html" class="reveal d1 text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-accent transition-colors self-start sm:self-auto nl">All articles →</a>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-6">
-
-      <article class="reveal d1 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=700&q=80" alt="Why I ditched CSS frameworks" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Design</span>
-            <span class="text-xs text-zinc-400">Mar 8, 2025</span>
-          </div>
-          <a href="blog-article.html">
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Why I ditched heavy CSS frameworks for Tailwind</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">After years of fighting specificity wars, here's what finally convinced me to make the switch.</p>
-          <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
-        </div>
-      </article>
-
-      <article class="reveal d2 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=700&q=80" alt="Design systems" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Dev</span>
-            <span class="text-xs text-zinc-400">Feb 21, 2025</span>
-          </div>
-          <a href="blog-article.html">
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">Building a design system from scratch in a weekend</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Tokens, components, docs — the process I follow to spin up a coherent system in 48 hours.</p>
-          <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
-        </div>
-      </article>
-
-      <article class="reveal d3 card-h group bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-100 dark:border-zinc-800 hover:border-accent">
-        <div class="pf w-full h-44">
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=700&q=80" alt="Freelance lessons" loading="lazy">
-        </div>
-        <div class="p-6">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-xs bg-orange-50 dark:bg-zinc-800 text-accent border border-orange-200 dark:border-zinc-700 px-2.5 py-1 rounded-full">Freelance</span>
-            <span class="text-xs text-zinc-400">Jan 14, 2025</span>
-          </div>
-          <a href="blog-article.html">
-            <h3 class="font-display font-bold text-lg text-zinc-900 dark:text-white mb-2 group-hover:text-accent transition-colors">5 lessons from my first year of full-time freelancing</h3>
-          </a>
-          <p class="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-4">Contracts, pricing, scope creep — the things nobody tells you before you go solo.</p>
-          <a href="blog-article.html" class="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-900 dark:text-white nl">Read more →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section> -->
+    </section>
 
     <!-- ═══ CONTACT ═══ -->
     <!-- <section id="contact" class="py-24">
@@ -703,15 +740,19 @@
     </div>
   </div>
 </section> -->
-
   </main>
 
   <footer class="border-t border-zinc-100 dark:border-zinc-900">
     <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-sm text-zinc-400">© <span id="yr"></span> Ridwan Fansuri. All rights reserved. <br> Developed by <a
-          href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a> • Distributed by <a
-          href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a></p>
-      <p class="text-xs text-zinc-500">Built with
+      <p class="text-sm text-zinc-400">
+        © <span id="yr"></span> Ridwan Fansuri. All rights reserved. <br />
+        Developed by
+        <a href="https://lbegey78.gumroad.com/" target="_blank" class="font-bold">Laurent Begey</a>
+        • Distributed by
+        <a href="https://themewagon.com/" target="_blank" class="font-bold">ThemeWagon</a>
+      </p>
+      <p class="text-xs text-zinc-500">
+        Built with
         <a href="https://tailwindcss.com" rel="noopener noreferrer" target="_blank"
           class="hover:text-accent transition-colors">Tailwind CSS</a>
         &amp;
@@ -727,43 +768,77 @@
         dark: false,
         mm: false,
         sc: false,
-        s: 'hero',
+        s: "hero",
 
         init() {
           // dark mode
-          this.dark = localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-          this.$watch('dark', v => localStorage.setItem('theme', v ? 'dark' : 'light'));
+          this.dark =
+            localStorage.getItem("theme") === "dark" ||
+            (!localStorage.getItem("theme") &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches);
+          this.$watch("dark", (v) =>
+            localStorage.setItem("theme", v ? "dark" : "light"),
+          );
 
           // scroll
-          window.addEventListener('scroll', () => {
-            this.sc = window.scrollY > 20;
-            this.updateSection();
-          }, { passive: true });
+          window.addEventListener(
+            "scroll",
+            () => {
+              this.sc = window.scrollY > 20;
+              this.updateSection();
+            },
+            { passive: true },
+          );
 
           // reveal
-          const io = new IntersectionObserver(entries => {
-            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-          }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-          document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((e) => {
+                if (e.isIntersecting) {
+                  e.target.classList.add("in");
+                  io.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
+          );
+          document
+            .querySelectorAll(".reveal")
+            .forEach((el) => io.observe(el));
 
           // year
-          document.getElementById('yr').textContent = new Date().getFullYear();
+          document.getElementById("yr").textContent =
+            new Date().getFullYear();
         },
 
         updateSection() {
-          const atBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 60;
-          if (atBottom) { this.s = 'contact'; return; }
-          const ids = ['contact', 'blog', 'reviews', 'about', 'work', 'services', 'hero'];
+          const atBottom =
+            window.innerHeight + window.scrollY >=
+            document.body.scrollHeight - 60;
+          if (atBottom) {
+            this.s = "contact";
+            return;
+          }
+          const ids = [
+            "contact",
+            "blog",
+            "reviews",
+            "about",
+            "work",
+            "services",
+            "hero",
+          ];
           for (const id of ids) {
             const el = document.getElementById(id);
-            if (el && window.scrollY >= el.offsetTop - 130) { this.s = id; return; }
+            if (el && window.scrollY >= el.offsetTop - 130) {
+              this.s = id;
+              return;
+            }
           }
-        }
-      }
+        },
+      };
     }
   </script>
-
 </body>
 
 </html>
