@@ -215,10 +215,10 @@
             :class="s==='services'?'on !text-zinc-900 dark:!text-white':''">Services</a></li>
         <li><a href="#link"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='work'?'on !text-zinc-900 dark:!text-white':''">My Link</a></li>
+            :class="s==='link'?'on !text-zinc-900 dark:!text-white':''">My Link</a></li>
         <li><a href="#portfolio"
             class="nl text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-            :class="s==='about'?'on !text-zinc-900 dark:!text-white':''">Portfolio</a></li>
+            :class="s==='portfolio'?'on !text-zinc-900 dark:!text-white':''">Portfolio</a></li>
 
       </ul>
 
@@ -888,11 +888,8 @@
             return;
           }
           const ids = [
-            "contact",
-            "blog",
-            "reviews",
-            "about",
-            "work",
+            "portfolio",
+            "link",
             "services",
             "hero",
           ];
