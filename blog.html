@@ -11,9 +11,19 @@
   <meta name="description" content="Eliott's blog — thoughts on UI/UX design, frontend development and freelancing." />
   <meta name="author" content="Eliott" />
   <meta property="og:title" content="Blog — Eliott" />
+  <meta property="og:description" content="Eliott's blog — thoughts on UI/UX design, frontend development and freelancing." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ridwanfansuri.com/blog.html" />
+  <meta property="og:image" content="https://ridwanfansuri.com/imgs/profile.jpeg" />
+  <meta property="og:image:alt" content="Ridwan Fansuri — frontend developer & guitarist" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Eliott" />
+  <meta name="twitter:description" content="Eliott's blog — thoughts on UI/UX design, frontend development and freelancing." />
+  <meta name="twitter:image" content="https://ridwanfansuri.com/imgs/profile.jpeg" />
+  <link rel="canonical" href="https://ridwanfansuri.com/blog.html" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <title>Blog — Eliott</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -199,7 +209,7 @@
       <div class="flex items-center gap-3">
         <button @click="dark=!dark"
           class="w-9 h-9 flex items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
-          :aria-label="dark?'Light mode':'Dark mode'">
+          aria-label="Toggle dark mode" :aria-label="dark?'Light mode':'Dark mode'">
           <svg x-show="!dark" xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
             stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
